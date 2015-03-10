@@ -1,0 +1,48 @@
+<!doctype html5>
+
+<html>
+  <head>
+    <title>RiotControl Demo</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="stylesheets/todo.css">
+
+    <!--[if lt IE 9]>
+    <script src="javascripts/lib/es5-shim.js"></script>
+    <script src="javascripts/lib/html5-shiv.js"></script>
+    <script>html5.addElements('todoapp')</script>
+    <![endif]-->
+
+  </head>
+
+  <body>
+
+    <item-app></item-app>
+
+    <script src="javascripts/lib/riot.js"></script>
+    <script src="javascripts/riotcontrol.js"></script>
+    <script src="javascripts/itemstore.js"></script>
+    <script src="javascripts/tags/item-detail.js"></script>
+    <script src="javascripts/tags/item-app.js"></script>
+
+    <script src="javascripts/lib/zepto.min.js"></script>
+
+    <script>
+      var itemStore = new ItemStore()
+      RiotControl.addStore(itemStore)
+
+      riot.mount('item-app') // Kickoff the Riot app.
+
+      // Riot router
+      riot.route(function(page, id) {
+        if (page == 'add')
+          RiotControl.trigger('route_item_add')
+        else {
+            alert(page);
+          RiotControl.trigger('route_item', id)
+        }
+      })
+    </script>
+
+  </body>
+
+</html>
