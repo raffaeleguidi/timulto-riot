@@ -6,9 +6,9 @@ var riot = require('gulp-riot');
 
 // Lint Task
 gulp.task('riot', function() {
-    return gulp.src('public/tags/*.html')
+    return gulp.src('public/tags/*')
         .pipe(riot())
-        .pipe(gulp.dest('public/javascripts/tags'));
+        .pipe(gulp.dest('public/javascripts/compiled'));
 });
 
 // Watch Files For Changes
