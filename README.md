@@ -1,9 +1,11 @@
 # timulto
 
-execute:
+To run the demo:
+
+npm install
 
 npm install gulp -g
 
-gulp
+gulp watch
 
-nodemon app.js
+and (in anothre terminal): nodemon app.js
