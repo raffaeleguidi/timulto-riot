@@ -32,7 +32,6 @@ function ItemStore() {
   // Add to our item collection.
   // Could push this to a server API.
   self.on('item_detail_add', function(title) {
-    console.log(title);
     self.items.push({ id: self.items.length+1, title: title })
     self.trigger('item_list_changed', self.items)
   })
